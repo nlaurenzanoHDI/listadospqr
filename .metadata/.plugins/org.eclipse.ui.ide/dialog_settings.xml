@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item value="492" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="402" key="DIALOG_HEIGHT"/>
+		<item value="100" key="DIALOG_Y_ORIGIN"/>
+		<item value="441" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="141" key="DIALOG_Y_ORIGIN"/>
+		<item value="303" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="false" key="FilterByLocation"/>
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/HDI-GeneratePDF/src/ar/com/hdi/services/impl/DBA6118PServiceImpl.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/HDI-Commons/src/ar/com/hdi/commons/utils/HDIUtils.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/HDI-GeneratePDF/src/ar/com/hdi/generatepdf/domain/list/PeticionList.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/HDI-Commons/src/ar/com/hdi/commons/service/RestService.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/HDI-Commons/src/ar/com/hdi/commons/utils/HDILogger.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/HDI-GeneratePDF/src/ar/com/hdi/generatepdf/utils/Fillers.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/HDI-Commons/Resources/log4j.properties&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/HDI-Commons/src/ar/com/hdi/commons/utils/MailUtility.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/HDI-GeneratePDF/src/ar/com/hdi/generatepdf/main/Main.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="false" key="ShowDerived"/>
+		<section name="DialogBoundsSettings">
+			<item value="584" key="DIALOG_WIDTH"/>
+			<item value="1|Noto Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="467" key="DIALOG_HEIGHT"/>
+			<item value="18" key="DIALOG_Y_ORIGIN"/>
+			<item value="383" key="DIALOG_X_ORIGIN"/>
+		</section>
+	</section>
+</section>

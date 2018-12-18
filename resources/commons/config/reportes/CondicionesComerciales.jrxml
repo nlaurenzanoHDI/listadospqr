@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CondicionesComerciales" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9b0d721f-b695-4aeb-80c8-eda7194d3363">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<pen lineWidth="0.25"/>
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#2D5A2D">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFE6CF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF" pattern="">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#F3F8F3"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1" fill="Solid">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#006400">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFFFBF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFFFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#2D5A2D" fill="Solid">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#CFE6CF" fill="Solid">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF" isBlankWhenNull="true">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#F3F8F3"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="dataset1" uuid="f10a849d-a6e0-4729-8a19-4a803f4f942b">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="nombre" class="java.lang.String">
+			<fieldDescription><![CDATA[nombre]]></fieldDescription>
+		</field>
+		<field name="nivel" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[nivel]]></fieldDescription>
+		</field>
+		<field name="padre" class="ar.com.hdi.generatepdf.domain.dto.IntermediarioDTO">
+			<fieldDescription><![CDATA[padre]]></fieldDescription>
+		</field>
+		<field name="matricula" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[matricula]]></fieldDescription>
+		</field>
+		<field name="codigo" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[codigo]]></fieldDescription>
+		</field>
+		<field name="condicionesComercialesPersonales" class="java.util.List">
+			<fieldDescription><![CDATA[condicionesComercialesPersonales]]></fieldDescription>
+		</field>
+		<field name="condicionesComercialesPatrimoniales" class="java.util.List">
+			<fieldDescription><![CDATA[condicionesComercialesPatrimoniales]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset2" uuid="6ee15794-2ec2-41c6-8ad9-f62197b479c6">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="codigoRama" class="java.lang.String">
+			<fieldDescription><![CDATA[codigoRama]]></fieldDescription>
+		</field>
+		<field name="extraPrimaVariable" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[extraPrimaVariable]]></fieldDescription>
+		</field>
+		<field name="rama" class="java.lang.String">
+			<fieldDescription><![CDATA[rama]]></fieldDescription>
+		</field>
+		<field name="tipoRama" class="java.lang.String">
+			<fieldDescription><![CDATA[tipoRama]]></fieldDescription>
+		</field>
+		<field name="totalComision" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[totalComision]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="Fecha" class="java.lang.String"/>
+	<parameter name="Intermediarios" class="java.util.List"/>
+	<pageHeader>
+		<band height="57" splitType="Stretch">
+			<image>
+				<reportElement x="248" y="11" width="65" height="32" uuid="90fc346d-82c4-4a9e-ab09-1d381d05a611"/>
+				<imageExpression><![CDATA["images/logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="115" height="20" uuid="ad7fe6b8-0854-498c-8608-697adb738cf1"/>
+				<text><![CDATA[HDI Seguros S. A.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="481" y="0" width="91" height="20" uuid="22edf725-4b90-442f-a6bf-83ef715e1722"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{Fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="572" height="20" uuid="9382cac4-ee74-4551-a484-2a24398e0649"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Ficha de Condiciones Comerciales]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="464" splitType="Stretch">
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="0" width="572" height="464" isRemoveLineWhenBlank="true" uuid="82248ccf-f112-45a2-a00f-9b00007eaad3"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1" uuid="c7d97e2a-389a-4273-a872-b52f9d74f33a">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{Intermediarios})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="464" width="572">
+						<textField isBlankWhenNull="true">
+							<reportElement x="46" y="0" width="35" height="20" uuid="65721550-4ef2-41e6-b229-6a5ca3f8205a">
+								<printWhenExpression><![CDATA[$F{matricula} != null]]></printWhenExpression>
+							</reportElement>
+							<textFieldExpression><![CDATA[$F{nivel}]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement x="81" y="0" width="54" height="20" uuid="f4cac8b5-358e-446c-bec1-b99b072173e8"/>
+							<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement x="135" y="0" width="269" height="20" uuid="078caaec-443e-4039-9db9-ec83fcd2f27d"/>
+							<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement x="512" y="0" width="60" height="20" uuid="635f8abb-4075-4b27-ba65-e6a0dc05a014"/>
+							<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="0" y="0" width="46" height="20" uuid="6e510fa5-17cf-4807-973b-bc4ea34a9e40">
+								<printWhenExpression><![CDATA[$F{matricula} != null]]></printWhenExpression>
+							</reportElement>
+							<text><![CDATA[Nivel:]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="404" y="0" width="108" height="20" uuid="9fa72c93-8890-43ac-88b0-2814e403b0dd">
+								<printWhenExpression><![CDATA[$F{matricula} != null]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Right"/>
+							<text><![CDATA[Matricula:]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="0" y="20" width="572" height="20" uuid="69d824e1-1440-4f65-aa3d-9eb8810408be">
+								<printWhenExpression><![CDATA[$F{matricula} != null]]></printWhenExpression>
+							</reportElement>
+							<text><![CDATA[Organizacion de la que depende:]]></text>
+						</staticText>
+						<line>
+							<reportElement x="0" y="40" width="572" height="1" uuid="cba89cae-2bc4-45d3-be37-e4a800309ab9">
+								<printWhenExpression><![CDATA[$F{matricula} != null]]></printWhenExpression>
+							</reportElement>
+						</line>
+						<staticText>
+							<reportElement x="0" y="40" width="46" height="20" uuid="4456d5fd-0d72-4d49-a5d8-4a51e8d7a89c">
+								<printWhenExpression><![CDATA[$F{padre}.getMatricula() != null]]></printWhenExpression>
+							</reportElement>
+							<text><![CDATA[Nivel:]]></text>
+						</staticText>
+						<textField isBlankWhenNull="true">
+							<reportElement x="46" y="41" width="35" height="20" uuid="840167a1-ef66-4d0a-b723-ff8618de57dc">
+								<printWhenExpression><![CDATA[$F{padre}.getMatricula() != null]]></printWhenExpression>
+							</reportElement>
+							<textFieldExpression><![CDATA[$F{padre}.getNivel()]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement x="81" y="40" width="54" height="20" uuid="6d42a0f1-14d9-4235-af25-fdf2c3aedfc0"/>
+							<textFieldExpression><![CDATA[$F{padre}.getCodigo()]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement x="135" y="40" width="269" height="20" uuid="d173bfec-33b6-4ed0-ba50-c6a7fb890f4b"/>
+							<textFieldExpression><![CDATA[$F{padre}.getNombre()]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="404" y="41" width="108" height="20" uuid="f958dd75-8a29-4474-97ec-51abd1c8dbc1">
+								<printWhenExpression><![CDATA[$F{padre}.getMatricula() != null]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Right"/>
+							<text><![CDATA[Matricula:]]></text>
+						</staticText>
+						<textField isBlankWhenNull="true">
+							<reportElement x="512" y="41" width="60" height="20" uuid="a0d7c14c-f4b6-4efe-b8fa-d3b5d31b7917"/>
+							<textFieldExpression><![CDATA[$F{padre}.getMatricula()]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement key="table 2" style="table 2" positionType="Float" mode="Transparent" x="0" y="113" width="572" height="23" isRemoveLineWhenBlank="true" uuid="7e9f8e51-c0cc-4cf0-b012-9772792a02ae">
+								<printWhenExpression><![CDATA[$F{matricula} != null]]></printWhenExpression>
+							</reportElement>
+							<jr:table whenNoDataType="AllSectionsNoDetail">
+								<datasetRun subDataset="dataset2" uuid="6d487870-16a1-4614-9489-e643cf3e5e29">
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{condicionesComercialesPersonales})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:columnGroup width="279" uuid="a10857df-0166-4ba0-92d7-d84875b55b26">
+									<jr:tableHeader style="table_CH" height="13" rowSpan="1">
+										<staticText>
+											<reportElement x="0" y="0" width="279" height="13" uuid="4f716d62-aa29-442d-b490-83111c9051a0"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font size="8"/>
+											</textElement>
+											<text><![CDATA[Seguros Personales]]></text>
+										</staticText>
+									</jr:tableHeader>
+									<jr:column width="55" uuid="68fe741b-4744-4018-88d9-d59db9a3c97c">
+										<jr:detailCell style="table 2_TD" height="9" rowSpan="1">
+											<textField isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="55" height="9" isRemoveLineWhenBlank="true" uuid="b9ac5df8-8c25-452f-97ef-994b291cfe98"/>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="6"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{codigoRama}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="224" uuid="3dedcb9c-e763-40e1-8b0e-c012de578d8f">
+										<jr:detailCell style="table 2_TD" height="9" rowSpan="1">
+											<textField isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="224" height="9" isRemoveLineWhenBlank="true" uuid="f603c825-3c92-419e-88ed-902104f3978c"/>
+												<textElement verticalAlignment="Middle">
+													<font size="6"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{rama}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+								</jr:columnGroup>
+								<jr:column width="201" uuid="de43c06f-6e31-4245-a030-8c94f1067743">
+									<jr:tableHeader style="table_CH" height="13" rowSpan="1">
+										<staticText>
+											<reportElement x="0" y="0" width="201" height="13" uuid="b126c009-0e16-4c15-9451-7b12f54fcc9d"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font size="8"/>
+											</textElement>
+											<text><![CDATA[Total de comisiones]]></text>
+										</staticText>
+									</jr:tableHeader>
+									<jr:detailCell style="table 2_TD" height="9" rowSpan="1">
+										<textField isBlankWhenNull="true">
+											<reportElement x="0" y="0" width="201" height="9" isRemoveLineWhenBlank="true" uuid="467e11f1-1db2-49f8-ab76-328e99e01964"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font size="6"/>
+											</textElement>
+											<textFieldExpression><![CDATA[$F{totalComision} + " %"]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+								<jr:column width="93" uuid="47894f2b-f789-4e84-88eb-81d9ee0ed6d1">
+									<jr:tableHeader style="table_CH" height="13" rowSpan="1">
+										<staticText>
+											<reportElement x="0" y="0" width="93" height="13" uuid="ddbc927a-bfc7-4261-b1c3-27a437c45216"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font size="8"/>
+											</textElement>
+											<text><![CDATA[Extra Prima Vari.]]></text>
+										</staticText>
+									</jr:tableHeader>
+									<jr:detailCell style="table 2_TD" height="9" rowSpan="1">
+										<textField isBlankWhenNull="true">
+											<reportElement x="0" y="0" width="93" height="9" isRemoveLineWhenBlank="true" uuid="a8c14bde-029c-443e-a8cf-a89217a73b97"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font size="6"/>
+											</textElement>
+											<textFieldExpression><![CDATA[$F{extraPrimaVariable} +" %"]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+							</jr:table>
+						</componentElement>
+						<componentElement>
+							<reportElement key="table 2" style="table 2" mode="Transparent" x="0" y="61" width="572" height="25" isRemoveLineWhenBlank="true" uuid="8890634a-5d1d-4c48-ab71-89bb6f718104">
+								<printWhenExpression><![CDATA[$F{matricula} != null]]></printWhenExpression>
+							</reportElement>
+							<jr:table whenNoDataType="AllSectionsNoDetail">
+								<datasetRun subDataset="dataset2" uuid="d6478353-c208-423f-b3a1-bd3bfdd97b20">
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{condicionesComercialesPatrimoniales})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:columnGroup width="279" uuid="8fb0491f-1c90-4ec7-99b5-16ed6bbac3fa">
+									<jr:tableHeader style="table_CH" height="14" rowSpan="1">
+										<staticText>
+											<reportElement x="0" y="0" width="279" height="14" uuid="35fa9a04-e869-4f06-bda3-58d51e6e40b6"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font size="8"/>
+											</textElement>
+											<text><![CDATA[Seguros Patrimoniales]]></text>
+										</staticText>
+									</jr:tableHeader>
+									<jr:column width="55" uuid="8aace586-b67f-4620-9cb3-3c5f11c9825b">
+										<jr:detailCell style="table 2_TD" height="10" rowSpan="1">
+											<textField isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="55" height="10" isRemoveLineWhenBlank="true" uuid="98eaa3da-c1b2-4c33-8c4a-4b1f1144d69e">
+													<printWhenExpression><![CDATA[$F{tipoRama}.equals( "P" )]]></printWhenExpression>
+												</reportElement>
+												<textElement textAlignment="Center" verticalAlignment="Middle">
+													<font size="6"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{codigoRama}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+									<jr:column width="224" uuid="6e836377-36f0-4554-9eb7-bf325d643f10">
+										<jr:detailCell style="table 2_TD" height="10" rowSpan="1">
+											<textField isBlankWhenNull="true">
+												<reportElement x="0" y="0" width="224" height="10" isRemoveLineWhenBlank="true" uuid="23ea1df1-059c-4688-a7a0-ac7a1edc90bd">
+													<printWhenExpression><![CDATA[$F{tipoRama}.equals( "P" )]]></printWhenExpression>
+												</reportElement>
+												<textElement verticalAlignment="Middle">
+													<font size="6"/>
+												</textElement>
+												<textFieldExpression><![CDATA[$F{rama}]]></textFieldExpression>
+											</textField>
+										</jr:detailCell>
+									</jr:column>
+								</jr:columnGroup>
+								<jr:column width="201" uuid="3ca76855-d3e6-45fb-9644-e9e7e5f02fed">
+									<jr:tableHeader style="table_CH" height="14" rowSpan="1">
+										<staticText>
+											<reportElement x="0" y="0" width="201" height="14" uuid="157d3800-0547-4454-ba19-a0be88e3fe14"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font size="8"/>
+											</textElement>
+											<text><![CDATA[Total de comisiones]]></text>
+										</staticText>
+									</jr:tableHeader>
+									<jr:detailCell style="table 2_TD" height="10" rowSpan="1">
+										<textField isBlankWhenNull="true">
+											<reportElement x="0" y="0" width="201" height="10" isRemoveLineWhenBlank="true" uuid="5467110d-5595-456c-9db9-d582773cd385">
+												<printWhenExpression><![CDATA[$F{tipoRama}.equals( "P" )]]></printWhenExpression>
+											</reportElement>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font size="6"/>
+											</textElement>
+											<textFieldExpression><![CDATA[$F{totalComision} +" %"]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+								<jr:column width="93" uuid="2ad4fbb3-25b1-43c5-a3f5-b42cae759e58">
+									<jr:tableHeader style="table_CH" height="14" rowSpan="1">
+										<staticText>
+											<reportElement x="0" y="0" width="93" height="14" uuid="c36b8a63-7a52-4571-894d-4a9074a54eae"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font size="8"/>
+											</textElement>
+											<text><![CDATA[Extra Prima Vari.]]></text>
+										</staticText>
+									</jr:tableHeader>
+									<jr:detailCell style="table 2_TD" height="10" rowSpan="1">
+										<textField isBlankWhenNull="true">
+											<reportElement x="0" y="0" width="93" height="10" isRemoveLineWhenBlank="true" uuid="dc30afdf-e0a5-4236-948a-f32daf01a857">
+												<printWhenExpression><![CDATA[$F{tipoRama}.equals( "P" )]]></printWhenExpression>
+											</reportElement>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font size="6"/>
+											</textElement>
+											<textFieldExpression><![CDATA[$F{extraPrimaVariable} +" %"]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+							</jr:table>
+						</componentElement>
+						<staticText>
+							<reportElement positionType="Float" x="0" y="144" width="572" height="20" uuid="716738db-d6fb-4494-856b-b2c0715ab9bf">
+								<printWhenExpression><![CDATA[$F{nivel}.intValue() == 1]]></printWhenExpression>
+							</reportElement>
+							<text><![CDATA[Los porcentajes de comisión arriba indicados se aplicarán sobre la Prima Técnica Pagada.]]></text>
+						</staticText>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="42">
+			<staticText>
+				<reportElement x="0" y="19" width="572" height="23" uuid="bdad4f0a-9aa1-4fd0-b472-7c6b6a7b55db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tel-Fax (5411) 5300-3300 - http://www.hdi.com.ar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="572" height="20" uuid="ffde48d4-5b76-40d2-8bbf-bfcf7da3c748"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HDI Seguros S.A. - Tte. Gral. Juan D. Peron 650 - 5to Piso (C1038AAN) Buenos Aires - Argentina]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

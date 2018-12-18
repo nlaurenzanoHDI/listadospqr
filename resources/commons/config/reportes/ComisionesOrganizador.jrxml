@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ComisionesOrganizador" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d2808702-0e01-4b54-807c-dfb210cf7f5f">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="86"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#2D5A2D">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFE6CF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#F3F8F3"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="New Dataset 1" uuid="eff117d1-65b3-4b38-a17f-c8628e684839">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="rama" class="java.lang.String">
+			<fieldDescription><![CDATA[rama]]></fieldDescription>
+		</field>
+		<field name="descripcionRama" class="java.lang.String">
+			<fieldDescription><![CDATA[descripcionRama]]></fieldDescription>
+		</field>
+		<field name="extraprimaVariable" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[extraprimaVariable]]></fieldDescription>
+		</field>
+		<field name="productorNivel1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[productorNivel1]]></fieldDescription>
+		</field>
+		<field name="productorNivel3" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[productorNivel3]]></fieldDescription>
+		</field>
+		<field name="productorNivel5" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[productorNivel5]]></fieldDescription>
+		</field>
+		<field name="recargoFinanciero" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[recargoFinanciero]]></fieldDescription>
+		</field>
+		<field name="productorNivel3_1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[productorNivel3]]></fieldDescription>
+		</field>
+		<field name="fomento1Nivel3" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[fomento1Nivel3]]></fieldDescription>
+		</field>
+		<field name="formaAcreedor5" class="java.lang.String">
+			<fieldDescription><![CDATA[formaAcreedor5]]></fieldDescription>
+		</field>
+		<field name="cobranzaNivel3" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[cobranzaNivel3]]></fieldDescription>
+		</field>
+		<field name="fomento2Nivel3" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[fomento2Nivel3]]></fieldDescription>
+		</field>
+		<field name="fomento1Nivel1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[fomento1Nivel1]]></fieldDescription>
+		</field>
+		<field name="cobranfomento1Nivel1zaNivel5" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[cobranfomento1Nivel1zaNivel5]]></fieldDescription>
+		</field>
+		<field name="productorNivel5_1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[productorNivel5]]></fieldDescription>
+		</field>
+		<field name="cobranzaNivel1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[cobranzaNivel1]]></fieldDescription>
+		</field>
+		<field name="fomento1Nivel5" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[fomento1Nivel5]]></fieldDescription>
+		</field>
+		<field name="fomento2Nivel1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[fomento2Nivel1]]></fieldDescription>
+		</field>
+		<field name="formaAcreedor3" class="java.lang.String">
+			<fieldDescription><![CDATA[formaAcreedor3]]></fieldDescription>
+		</field>
+		<field name="formaAcreedor1" class="java.lang.String">
+			<fieldDescription><![CDATA[formaAcreedor1]]></fieldDescription>
+		</field>
+		<field name="productorNivel1_1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[productorNivel1]]></fieldDescription>
+		</field>
+		<field name="fomento2Nivel5" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[fomento2Nivel5]]></fieldDescription>
+		</field>
+		<field name="consultar" class="java.lang.String">
+			<fieldDescription><![CDATA[consultar]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="Peticion" class="ar.com.hdi.generatepdf.domain.dto.PeticionDTO"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="59" splitType="Stretch">
+			<image>
+				<reportElement x="250" y="8" width="73" height="49" uuid="9d0091d5-a5d0-46ce-8996-a3251970fe7f"/>
+				<imageExpression><![CDATA["images/logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="572" height="20" uuid="1f3d1478-3a15-4903-86d8-5c03ce51a5ae"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Comisiones]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="133" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="65" height="13" uuid="57c9c419-b3fe-460c-bb2f-3b8c1571f244"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Productor 1: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="13" width="65" height="13" uuid="1c5819af-3bf4-4a15-abb4-7616d72ee1d5"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Organizador: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="26" width="65" height="13" uuid="20c047b4-d2b3-4c92-bd65-d022341b9057"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Productor 2: ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="65" y="0" width="35" height="13" uuid="a7816856-77a1-4b45-9f9d-ae6026b2b726"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Peticion}.getCodigoProductor()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="65" y="13" width="35" height="13" uuid="87617698-a02f-41bb-8dad-df4220bbcf80"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Peticion}.getCodigoOrganizador()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="65" y="26" width="35" height="13" uuid="575c1cf9-3a6d-48da-941f-2cad07deba70"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Peticion}.getCodigoProductor2()]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="table" style="table" positionType="Float" x="0" y="47" width="572" height="34" uuid="55744ccc-0353-4235-a733-b00ce1eb101b"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="New Dataset 1" uuid="f1221c3d-6f12-4bf3-8441-fa7e9f417961">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{Peticion}.getRegistrosPatrimoniales())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="145" uuid="77b29d94-f44c-40db-aeee-c38707a4e612">
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="145" height="29" uuid="92e44f81-c3e9-4535-ba14-4bf7dd365a42"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Seguros Patrimoniales]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:column width="55" uuid="a3a650a1-c85a-49a6-83b7-6bf3acf3409c">
+							<jr:detailCell style="table_TD" height="12" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="55" height="12" uuid="0485b24c-178e-4e74-bbc1-0904b021f47e"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{rama}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="90" uuid="6d43edfc-6847-4e67-a634-1446ab268c1e">
+							<jr:detailCell style="table_TD" height="12" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="90" height="12" uuid="475cb1a5-51b7-49d5-8aa9-6d6f4e5042f9"/>
+									<textElement verticalAlignment="Middle">
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{descripcionRama}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+					<jr:column width="70" uuid="193a6cf5-c32e-4caf-9456-c578f27fae45">
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="68" height="29" uuid="dc5fd733-4a9f-4240-8239-03ee28190527"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Ex. Pa. Va. + RecFin]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="12" uuid="1d0f5207-8021-406a-8c87-30d04c02674c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{extraprimaVariable}.add($F{recargoFinanciero}) + " %"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="dd31a1c2-d88e-406e-bd1e-ae2c534e7611">
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="29" uuid="48e60433-a36d-4187-a91f-4dcb2942f286"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Prod. 1]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="12" uuid="78c0161f-ed41-48cf-8bcb-de4c21625cba"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{productorNivel1}.add($F{fomento1Nivel1}).add($F{fomento2Nivel1}).add($F{cobranzaNivel1}) + " %"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="bc7982ce-8bf6-4a69-a1a7-1764e172ff05">
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="29" uuid="c6fb8d1a-21b9-410d-b33f-415eb60bd816"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Organ.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="12" uuid="918ff4fa-430f-4c7a-bcd8-285b939b394f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{productorNivel3}.add($F{fomento1Nivel3}).add($F{fomento2Nivel3}).add($F{cobranzaNivel3}) + " %"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="cac91446-c4bc-46d3-9225-4143590a73ea">
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="29" uuid="c03800ba-56d6-4b65-ab94-cb575afba21e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Prod. 2]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="12" uuid="1cecbc7c-4905-4857-abad-6546dc09496b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{productorNivel5}.add($F{fomento1Nivel5}).add($F{fomento2Nivel5}).add($F{cobranfomento1Nivel1zaNivel5}) + " %"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="7ee60a81-04a6-4c10-ba08-b68782b98c58">
+						<jr:tableHeader height="0" rowSpan="1"/>
+						<jr:tableFooter height="0" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="29" uuid="a7a27f10-05cf-438b-82d7-048510678045"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Totales]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="0" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="12" uuid="0b004a69-f0aa-4ef4-81b0-a15ae57bfef8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{extraprimaVariable}.add($F{recargoFinanciero}).add($F{productorNivel1}).add($F{productorNivel3}).add($F{productorNivel5}) + " %"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table" style="table" positionType="Float" x="0" y="99" width="572" height="34" uuid="f118840e-fa2b-4974-b8e2-96e19f0f1521"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="New Dataset 1" uuid="9d352068-afe8-4f29-be5d-c87bd24c714b">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{Peticion}.getRegistrosPersonas())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="145" uuid="eced6e91-a276-441c-9c7b-f3cc217c428d">
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="145" height="29" uuid="92f14279-bdb1-4b6e-8ea9-5e1b28b5207a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Seguros de Personas]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:column width="55" uuid="26c738a4-5ea1-4a75-b2e4-0ae6ce9ba06a">
+							<jr:detailCell style="table_TD" height="13" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="55" height="12" uuid="6c62d9b1-1724-43ae-ac7f-67d7deab8043"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{rama}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="90" uuid="f59cf8dc-9df7-44e1-884b-4f869290843b">
+							<jr:detailCell style="table_TD" height="13" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="90" height="12" uuid="b3efcdc3-5f4d-4d75-a128-d96d2076f928"/>
+									<textElement verticalAlignment="Middle">
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{descripcionRama}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+					<jr:column width="70" uuid="c671f389-70ee-4123-acbb-dc9c9483ce72">
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="68" height="29" uuid="80ea028f-bfaf-443f-b4a6-f86415872b93"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Ex. Pa. Va. + RecFin]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="13" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="12" uuid="c73610a0-f61e-4058-9005-3eec370be7b2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{consultar}.equals("N")?$F{extraprimaVariable}.add($F{recargoFinanciero}) + " %":"Consultar"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="4be5863b-d06c-456d-b768-a25271cbcec0">
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="29" uuid="904b3dbf-b305-439a-aac7-a2d1dcd6fa3f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Prod. 1]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="13" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="12" uuid="91fbf1b3-f33b-4f4d-baed-6a3ec2e3be04"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{consultar}.equals("N")?$F{productorNivel1}.add($F{fomento1Nivel1}).add($F{fomento2Nivel1}).add($F{cobranzaNivel1}) + " %" : "Consultar"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="83451b39-529f-4365-aa72-f216f76c3363">
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="29" uuid="fd6cbf85-bc7b-42c8-84aa-a45c131c0a07"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Organ.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="13" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="12" uuid="c83f6c68-a686-4bf0-8dbd-bbf905891721"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{consultar}.equals("N")?$F{productorNivel3}.add($F{fomento1Nivel3}).add($F{fomento2Nivel3}).add($F{cobranzaNivel3}) + " %":"Consultar"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="73742588-fe5b-4c50-b226-f3958625c059">
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="29" uuid="03120461-9313-40b2-aca6-8513edf32a14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Prod. 2]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="13" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="12" uuid="0191e258-7597-4fe0-bd8c-06c24fe99bf8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{consultar}.equals("N")?$F{productorNivel5}.add($F{fomento1Nivel5}).add($F{fomento2Nivel5}).add($F{cobranfomento1Nivel1zaNivel5}) + " %":"Consultar"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="d0810bde-a542-49f9-9548-a9beb03b8d61">
+						<jr:tableHeader height="0" rowSpan="1"/>
+						<jr:tableFooter height="0" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="29" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="29" uuid="f21e14fa-2be9-4c3a-aa94-3074bb5fac7a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Totales]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="0" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="13" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="12" uuid="3e8a9c79-bf8c-48a3-ac48-3b887f114d1f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{consultar}.equals("N")?$F{extraprimaVariable}.add($F{recargoFinanciero}).add($F{productorNivel1}).add($F{productorNivel3}).add($F{productorNivel5}) + " %":"Consultar"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<textField isBlankWhenNull="true">
+				<reportElement x="112" y="0" width="460" height="13" uuid="f300cc95-06d1-4706-bd7f-bd6c7296584b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Peticion}.getNombreProductor()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="112" y="13" width="460" height="13" uuid="3973f3ea-e380-42c7-a3a2-34694ee6ad8a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Peticion}.getNombreOrganizador()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="112" y="26" width="460" height="13" uuid="9f069f5b-7d17-489f-bdd3-de992e186680"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Peticion}.getNombreProductor2()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="30" width="572" height="23" uuid="66694f94-f6f6-410a-ba04-44598e9f289c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tel-Fax (5411) 5300-3300 - http://www.hdi.com.ar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="11" width="572" height="20" uuid="89ffd863-8b76-4990-b200-2d3a00a1c611"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HDI Seguros S.A. - Tte. Gral. Juan D. Peron 650 - 5to Piso (C1038AAN) Buenos Aires - Argentina]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

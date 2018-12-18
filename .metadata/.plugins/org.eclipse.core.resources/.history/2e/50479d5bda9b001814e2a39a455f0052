@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="HDI-CommonsEAR">
+        <wb-resource deploy-path="/" source-path="/" tag="defaultRootSource"/>
+        <dependent-module archiveName="HDI-Commons.jar" deploy-path="/" handle="module:/resource/HDI-Commons/HDI-Commons">
+            <dependent-object>Module_1533822153921</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="HDI-CommonsClient.jar" deploy-path="/" handle="module:/resource/HDI-CommonsClient/HDI-CommonsClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="HDI-GeneradorPDF.jar" deploy-path="/" handle="module:/resource/HDI-GeneradorPDF/HDI-GeneradorPDF">
+            <dependent-object>Module_1533822199924</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

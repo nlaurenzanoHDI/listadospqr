@@ -1,0 +1,51 @@
+package ar.com.hdi.generatepdf.main;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import ar.com.hdi.commons.utils.HDIProperties;
+import ar.com.hdi.commons.utils.ReportUtility;
+import ar.com.hdi.generatepdf.domain.dto.PeticionDTO;
+import ar.com.hdi.generatepdf.utils.Fillers;
+import ar.com.hdi.services.DBA6118PService;
+import ar.com.hdi.services.impl.DBA6118PServiceImpl;
+
+public class Main {
+
+	public static void main(String[] args) {
+		DBA6118PService service = new DBA6118PServiceImpl();
+		List<PeticionDTO> peticiones = service
+				.obtenerPeticiones("A", "CA", "G");
+		for (PeticionDTO peticion : peticiones) {
+			try {
+				Map<String, Object> parametros = new HashMap<String, Object>();
+//				Fillers.fillReporteComision(parametros, peticion);
+//				generarListado(parametros, "Comisiones", "Comisiones_"
+//						+ String.format("%07d", peticion.getNumero().longValue()) + ".pdf");
+//				parametros = new HashMap<String, Object>();
+				Fillers.fillReporteCondicionesComerciales(parametros, peticion);
+				generarListado(parametros, "CondicionesComerciales", "CondicionesComerciales_"
+						+ String.format("%07d", peticion.getNumero().longValue()) + ".pdf");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	public static void generarListado(Map<String, Object> parametros, String tipoReport, String nombreArchivo) throws Exception {
+		try {
+				ReportUtility.generatePdf(
+						parametros,
+						HDIProperties.getPropiedad("reportes.properties",
+								tipoReport),
+						HDIProperties.getPropiedad("config.properties",
+								"download_location") + nombreArchivo);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			throw new Exception(e);
+		}
+	}
+}
